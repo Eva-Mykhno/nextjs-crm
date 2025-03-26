@@ -1,5 +1,5 @@
-import StatusLabel, { Status } from './components/status-label';
 import { headers } from 'next/headers';
+import AddCompanyButton from '@/app/components/add-company-button';
 
 export default async function Home() {
   console.log(Object.fromEntries((await headers()).entries()));
@@ -7,10 +7,7 @@ export default async function Home() {
   return (
     <main>
       <h1 className="text-xl">Home page {new Date().toTimeString()}</h1>
-      <StatusLabel status={Status.Active}>Active</StatusLabel>
-      <StatusLabel status={Status.NotActive}>Not Active</StatusLabel>{' '}
-      <StatusLabel status={Status.Pending}>Pending</StatusLabel>{' '}
-      <StatusLabel status={Status.Suspended}>Suspended</StatusLabel>
+      <AddCompanyButton />
     </main>
   );
 }
